@@ -234,8 +234,8 @@ class VideoLibrary
 			{
 				$response = Yii::app()->xbmc->performRequest(
 						'Files.PrepareDownload', array('path'=>$rawFile));
-				
-				$files[] = Yii::app()->xbmc->getAbsoluteVfsUrl($response->result->details->path);
+
+				$files[] = substr(rawurldecode($response->result->details->path), 4);
 			}
 			catch(CHttpException $e)
 			{
