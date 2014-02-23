@@ -213,7 +213,6 @@ class VideoLibrary
 	public static function getVideoLinks($file)
 	{
 		$rawFiles = array();
-		$files = array();
 
 		// Check for stack files
 		if (strpos($file, 'stack://') !== false)
@@ -221,29 +220,7 @@ class VideoLibrary
 		else
 			$rawFiles[] = $file;
 
-		foreach ($rawFiles as $rawFile)
-		{
-			// Remove stack://
-			if (substr($rawFile, 0, 8) === 'stack://')
-				$rawFile = substr($rawFile, 8);
-
-			// Create the URL to the file. If the file has been deleted from
-			// disc but the movie still exists in the library the API call 
-			// throws an exception. We just skip this file if that's the case.
-			try
-			{
-				$response = Yii::app()->xbmc->performRequest(
-						'Files.PrepareDownload', array('path'=>$rawFile));
-
-				$files[] = substr(rawurldecode($response->result->details->path), 4);
-			}
-			catch(CHttpException $e)
-			{
-				$files[] = false;
-			}
-		}
-
-		return $files;
+		return $rawFiles;
 	}
 	
 	/**
