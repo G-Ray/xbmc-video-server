@@ -77,12 +77,17 @@ $actions = array(
 	// user-related actions
 	array('label'=>'Utilisateur'),
 	array('label'=>'Déconnexion', 'url'=>array('site/logout')),
-	// system-related
-	array('label'=>'System'),
 );
 
+if (Yii::app()->user->role == User::ROLE_ADMIN) {
+        $actions[] = array(
+                // system-related
+                'label'=>'System',
+        );
+}
+
 // Only show "Flush cache" if cacheApiCalls is enabled
-if (Setting::getValue('cacheApiCalls'))
+if (Setting::getValue('cacheApiCalls') && Yii::app()->user->role == User::ROLE_ADMIN)
 {
 	$actions[] = array(
 		'label'=>'Flush cache',
@@ -91,11 +96,13 @@ if (Setting::getValue('cacheApiCalls'))
 	);
 }
 
-$actions[] = array(
-	'label'=>'Update library', 
-	'url'=>array('backend/updateLibrary'), 
-	'linkOptions'=>array('confirm'=>"Are you sure you want to update the backend's library?")
-);
+if (Yii::app()->user->role == User::ROLE_ADMIN) {
+        $actions[] = array(
+                'label'=>'Update library',
+                'url'=>array('backend/updateLibrary'),
+                'linkOptions'=>array('confirm'=>"Are you sure you want to update the backend's library?")
+        );
+}
 
 $rightItems[] = array('label'=>'Actions', 'items'=>$actions, 'icon'=>'tasks');
 
