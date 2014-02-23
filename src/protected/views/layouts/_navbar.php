@@ -1,25 +1,25 @@
 <?php 
 
 $leftItems = array(
-	array('label'=>'Movies', 
+	array('label'=>'Films', 
 		'items'=>array(
 			array(
-				'label'=>'Browse', 'url'=>array('movie/index'),
+				'label'=>'Parcourir', 'url'=>array('movie/index'),
 				'active'=>in_array($this->route, array('movie/index', 'movie/details')),
 			),
 			array(
-				'label'=>'Recently added', 'url'=>array('movie/recentlyAdded'),
+				'label'=>'Récemment ajoutés', 'url'=>array('movie/recentlyAdded'),
 			),
 		), 'linkOptions'=>array('class'=>'fontastic-icon-video'),
 	),
-	array('label'=>'TV Shows', 
+	array('label'=>'Séries (bientôt)', 
 		'items'=>array(
 			array(
-				'label'=>'Browse', 'url'=>array('tvShow/index'),
+				'label'=>'Parcourir', 'url'=>array('tvShow/index'),
 				'active'=>in_array($this->route, array('tvShow/index', 'tvShow/details')),
 			),
 			array(
-				'label'=>'Recently added', 'url'=>array('tvShow/recentlyAdded'),
+				'label'=>'Récemment ajoutés', 'url'=>array('tvShow/recentlyAdded'),
 			),
 		), 'linkOptions'=>array('class'=>'fontastic-icon-tv'),
 	),
@@ -75,8 +75,8 @@ if (Yii::app()->user->role == User::ROLE_ADMIN)
 // Add the "Actions" menu
 $actions = array(
 	// user-related actions
-	array('label'=>'User'),
-	array('label'=>'Log out', 'url'=>array('site/logout')),
+	array('label'=>'Utilisateur'),
+	array('label'=>'Déconnexion', 'url'=>array('site/logout')),
 	// system-related
 	array('label'=>'System'),
 );

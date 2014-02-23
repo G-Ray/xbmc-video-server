@@ -39,7 +39,7 @@ abstract class VideoFilterForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'name'=>'Name',
+			'name'=>'Titre',
 			'genre'=>'Genre',
 			'watchedStatus'=>'Watched status',
 		);

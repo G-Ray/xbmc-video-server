@@ -56,10 +56,10 @@ class MovieFilterForm extends VideoFilterForm
 	public function attributeLabels()
 	{
 		return array_merge(parent::attributeLabels(), array(
-			'year'=>'Year',
-			'quality'=>'Quality',
-			'actor'=>'Actor',
-			'rating'=>'Minimum rating'
+			'year'=>'Année',
+			'quality'=>'Qualité',
+			'actor'=>'Acteur',
+			'rating'=>'Note minimale'
 		));
 	}
 

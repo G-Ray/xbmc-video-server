@@ -73,7 +73,7 @@ abstract class RetrieveMediaWidget extends CWidget
 			return;
 		}
 
-		echo TbHtml::linkButton('Watch', $this->getWatchButtonOptions());
+		echo TbHtml::linkButton('Regarder', $this->getWatchButtonOptions());
 		$this->renderLinks();
 	}
 
@@ -122,9 +122,9 @@ abstract class RetrieveMediaWidget extends CWidget
 		foreach ($this->links as $k=> $link)
 		{
 			if ($numLinks == 1)
-				$label = 'Download';
+				$label = 'Télécharger';
 			else
-				$label = 'Download (part #'.(++$k).')';
+				$label = 'Télécharger (part #'.(++$k).')';
 
 			echo CHtml::tag('p', array(), CHtml::link($label, $link, $linkOptions));
 		}

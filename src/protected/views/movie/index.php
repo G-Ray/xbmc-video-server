@@ -3,11 +3,11 @@
 /* @var $this MovieController */
 /* @var $filterForm MovieFilterForm */
 /* @var $dataProvider LibraryDataProvider */
-$this->pageTitle = 'Movies';
+$this->pageTitle = 'Films';
 
 ?>
 
-<h2>Movies</h2>
+<h2>Films</h2>
 
 <?php
 

@@ -24,12 +24,12 @@ $this->pageTitle = $details->label.' ('.$details->year.') - Movies';
 			{
 				?>
 				<div class="item-links">
-					<h3>Watch / Download</h3>
+					<h3>Regarder / Télécharger</h3>
 
 					<p>
-						Click the Watch button to start streaming the video (open 
-						the file in your favorite media player), or download the 
-						individual files for later viewing using the links below it.
+                                                Cliquez sur le bouton regarder pour lancer le streaming
+                                                (ouvrez le fichier dans votre lecteur favoris), ou téléchargez
+                                                le fichier en utilisant le lien ci-dessous.
 					</p>
 
 					<?php $this->widget('RetrieveMovieWidget', array(
@@ -102,18 +102,18 @@ $this->pageTitle = $details->label.' ('.$details->year.') - Movies';
 				</div>
 			</div>
 			
-			<h3>Plot</h3>
+			<h3>Résumé</h3>
 			
 			<div class="item-plot">
 				<p>
 					<?php echo !empty($details->plot) ? $details->plot 
-							: 'Not available'; ?>
+							: 'Indisponible'; ?>
 				</p>
 			</div>
 			
-			<h3>Cast</h3>
+			<h3>Casting</h3>
 			
-			<?php echo FormHelper::helpBlock("Click an image to see other movies with that person, or click the name to go to the person's IMDb page"); ?>
+			<?php echo FormHelper::helpBlock("Cliquez sur une image pour voir les autres films avec cette acteur, ou cliquez sur le nom pour aller sur sa page IMdB"); ?>
 			
 			<div class="row-fluid">
 				<?php $this->widget('zii.widgets.CListView', array(
