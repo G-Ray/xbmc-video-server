@@ -95,7 +95,7 @@ abstract class RetrieveMediaWidget extends CWidget
 	 */
 	private function getDownloadName($link)
 	{
-		return urldecode(substr($link, strrpos($link, '%2f') + 3));
+		return urldecode(substr($link, strrpos($link, '/') + 1));
 	}
 
 	/**
@@ -136,7 +136,7 @@ abstract class RetrieveMediaWidget extends CWidget
 
 			// Add the "download" attribute
 			$linkOptions['download'] = $this->getDownloadName($link);
-			
+
 			echo CHtml::tag('p', array(), CHtml::link($label, $link, $linkOptions));
 		}
 
