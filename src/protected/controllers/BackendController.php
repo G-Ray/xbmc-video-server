@@ -106,6 +106,10 @@ class BackendController extends AdminOnlyController
 		{
 			$model->attributes = $_POST['Backend'];
 
+			// Check whether this is the first backend ever created, if so we 
+			// redirect to the settings page
+			$firstRun = Yii::app()->backendManager->getCurrent() === null;
+			
 			if ($model->save())
 			{
 				$this->log('"%s" created backend "%s"', Yii::app()->user->name, 
@@ -113,7 +117,10 @@ class BackendController extends AdminOnlyController
 				
 				Yii::app()->user->setFlash('success', 'Backend created successfully');
 				
-				$this->redirect(array('admin'));
+				if ($firstRun)
+					$this->redirect(array('setting/admin'));
+				else
+					$this->redirect(array('admin'));
 			}
 		}
 		else

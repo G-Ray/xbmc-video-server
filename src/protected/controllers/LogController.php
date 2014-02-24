@@ -23,6 +23,16 @@ class LogController extends AdminOnlyController
 	}
 
 	/**
+	 * Override parent implementation so the user can check the logs even when 
+	 * a backend is not yet configured
+	 * @param CFilterChain $filterChain
+	 */
+	public function filterCheckConfiguration($filterChain)
+	{
+		$filterChain->run();
+	}
+
+	/**
 	 * Override parent implementation to allow anyone to post log events
 	 * @return array the access rules for this controller
 	 */
@@ -75,7 +85,9 @@ class LogController extends AdminOnlyController
 			if (!isset($_POST[$attribute]))
 				throw new CHttpException(400, 'Invalid request');
 
-		Yii::log($_POST['logMessage'], CLogger::LEVEL_INFO, $_POST['logCategory']);
+		// The message may be HTML-encoded
+		$message = html_entity_decode($_POST['logMessage']);
+		Yii::log($message, CLogger::LEVEL_INFO, $_POST['logCategory']);
 	}
 
 	/**

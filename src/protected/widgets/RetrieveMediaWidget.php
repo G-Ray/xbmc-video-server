@@ -89,6 +89,14 @@ abstract class RetrieveMediaWidget extends CWidget
 
 		return true;
 	}
+	
+	/**
+	 * @return the filename part of the full link to a file
+	 */
+	private function getDownloadName($link)
+	{
+		return urldecode(substr($link, strrpos($link, '%2f') + 3));
+	}
 
 	/**
 	 * Returns the stream URL for the media. If the media has a single link and 
@@ -115,7 +123,7 @@ abstract class RetrieveMediaWidget extends CWidget
 		$linkOptions = array(
 			'class'=>'fontastic-icon-disc loggable-link',
 			'data-log-category'=>$this->getLogCategory(),
-			'data-log-message'=>$this->getLogMessage(),
+			'data-log-message'=>htmlentities($this->getLogMessage()),
 			'data-log-url'=>Yii::app()->controller->createUrl('/log/logEvent'),
 		);
 
@@ -126,6 +134,9 @@ abstract class RetrieveMediaWidget extends CWidget
 			else
 				$label = 'Télécharger (part #'.(++$k).')';
 
+			// Add the "download" attribute
+			$linkOptions['download'] = $this->getDownloadName($link);
+			
 			echo CHtml::tag('p', array(), CHtml::link($label, $link, $linkOptions));
 		}
 
