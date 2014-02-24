@@ -41,10 +41,6 @@ class MovieFilter extends VideoFilter
 				$this->model->getQualities(), 
 				array('empty'=>' ', 'style'=>'width: 70px;'));
 
-		echo $this->form->dropDownListControlGroup($this->model, 'watchedStatus', 
-				VideoFilterForm::getWatchedStatuses(), 
-				array('empty'=>' ', 'style'=>'width: 120px;'));
-
 		echo $this->form->textFieldControlGroup($this->model, 'actor');
 	}
 	
