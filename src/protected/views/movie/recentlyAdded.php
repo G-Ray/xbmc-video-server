@@ -1,11 +1,11 @@
 <?php
 
 /* @var $dataProvider LibraryDataProvider */
-$this->pageTitle = 'Films récemment ajouté';
+$this->pageTitle = 'Films récemment ajoutés';
 
 ?>
 
-<h2>Recently added movies</h2>
+<h2>Films récemment ajoutés</h2>
 
 <?php
 
