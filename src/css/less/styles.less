@@ -1,6 +1,6 @@
-@import "../../../vendor/crisu83/yiistrap/assets/less/bootstrap.less";
-@import "../../../vendor/crisu83/yiistrap/assets/less/responsive.less";
-@import "../../../vendor/crisu83/yiistrap/assets/less/yiistrap.less";
+@import "bootstrap/bootstrap.less";
+@import "bootstrap/responsive.less";
+@import "bootstrap/yiistrap.less";
 @import "bootswatch/variables.less";
 @import "bootswatch/bootswatch.less";
 @import "typeahead.less";
@@ -45,6 +45,14 @@ span.required {
 .help-block {
 	font-size: smaller;
 	font-style: italic;
+}
+
+// Make select dropdowns and other similar elements have the same padding/border
+// as all other inputs
+select {
+	height: 38px; // 20 + padding + border
+	padding: 7px 6px;
+	border-width: 2px;
 }
 
 .button-column {
