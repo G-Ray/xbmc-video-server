@@ -10,6 +10,9 @@ $leftItems = array(
 			array(
 				'label'=>'Récemment ajoutés', 'url'=>array('movie/recentlyAdded'),
 			),
+                        array(
+                                'label'=>'Ajouter un film', 'url'=>array('movie/addMovie'),
+                        ),
 		), 'linkOptions'=>array('class'=>'fontastic-icon-video'),
 	),
 	array('label'=>'Séries (bientôt)', 

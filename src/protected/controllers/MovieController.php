@@ -138,5 +138,13 @@ class MovieController extends MediaController
 
 		echo $playlist;
 	}
-	
+
+        /**
+         * Renders an iframe from HTPC-Manager
+         */
+        public function actionaddMovie()
+        {
+                $this->render('addMovie');
+        }
+
 }
