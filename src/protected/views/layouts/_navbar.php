@@ -82,7 +82,16 @@ if (Yii::app()->user->role == User::ROLE_ADMIN)
 $actions = array(
 	// user-related actions
 	array('label'=>'Utilisateur'),
-	array('label'=>'Déconnexion', 'url'=>array('site/logout')),
+);
+
+if (Yii::app()->user->role == User::ROLE_USER) {
+        $actions[] = array(
+                'label'=>'Changer mon mot de passe', 'url'=>array('account/update')
+        );
+}
+
+$actions[] = array(
+        'label'=>'Déconnexion', 'url'=>array('site/logout'),
 );
 
 if (Yii::app()->user->role == User::ROLE_ADMIN) {
