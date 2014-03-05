@@ -26,9 +26,6 @@ $leftItems = array(
 			),
 		), 'linkOptions'=>array('class'=>'fontastic-icon-tv'),
 	),
-        array('label'=>'Téléchargements', 'url'=>array('download/index'),
-                'linkOptions'=>array('class'=>'fontastic-icon-disc'),
-        ),
 );
 
 $rightItems = array();
