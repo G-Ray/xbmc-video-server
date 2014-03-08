@@ -12,7 +12,7 @@ $leftItems = array(
 			),
 		), 'linkOptions'=>array('class'=>'fontastic-icon-video'),
 	),
-	array('label'=>'Séries (bientôt)', 
+	array('label'=>'Séries', 
 		'items'=>array(
 			array(
 				'label'=>'Parcourir', 'url'=>array('tvShow/index'),

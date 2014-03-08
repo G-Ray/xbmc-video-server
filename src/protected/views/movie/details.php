@@ -102,7 +102,7 @@ $this->pageTitle = $details->label.' ('.$details->year.') - Movies';
 				</div>
 			</div>
 			
-			<h3>Résumé</h3>
+			<h3>Synopsis</h3>
 			
 			<div class="item-plot">
 				<p>
