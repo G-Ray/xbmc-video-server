@@ -15,11 +15,11 @@ $leftItems = array(
 	array('label'=>'Séries (bientôt)', 
 		'items'=>array(
 			array(
-				'label'=>'Parcourir', //'url'=>array('tvShow/index'),
-				//'active'=>in_array($this->route, array('tvShow/index', 'tvShow/details')),
+				'label'=>'Parcourir', 'url'=>array('tvShow/index'),
+				'active'=>in_array($this->route, array('tvShow/index', 'tvShow/details')),
 			),
 			array(
-				'label'=>'Récemment ajoutés', //'url'=>array('tvShow/recentlyAdded'),
+				'label'=>'Récemment ajoutés', 'url'=>array('tvShow/recentlyAdded'),
 			),
 		), 'linkOptions'=>array('class'=>'fontastic-icon-tv'),
 	),
